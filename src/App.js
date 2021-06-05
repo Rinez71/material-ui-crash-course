@@ -17,6 +17,8 @@ import {Business} from '@material-ui/icons';
 import useStyles from './styles';
 import levi from '../src/img/levi.jpg'
 
+const cards = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+
 const App = () => {
 	const classes = useStyles();
 	return (
@@ -59,26 +61,36 @@ const App = () => {
 				</div>
 				<Container className={classes.cardGrid} maxWidth='md'>
 					<Grid container spacing={4}>
-						<Grid item>
- 							<Card className={classes.card}>
-								<CardMedia className={classes.cardMedia} image={levi} title='image title'/>
-								<CardContent className={classes.cardContent}>
-									<Typography gutterBottom variant='h5'>
-										Heading
-									</Typography>
-									<Typography>
-										Lorem ipsum dolor sit amet, consectetur adipisicing elit. A, asperiores, atque aut cumque ea est eveniet impedit incidu.
-									</Typography>
-								</CardContent>
-								<CardActions>
-									<Button size='small' color='primary'>Action1</Button>
-									<Button size='small' color='primary'>Action2</Button>
-								</CardActions>
-							</Card>
-						</Grid>
+						{cards.map((card) => (
+							<Grid item key={card} xs={12} sm={6} md={4}>
+								<Card className={classes.card}>
+									<CardMedia className={classes.cardMedia} image={levi} title='image title'/>
+									<CardContent className={classes.cardContent}>
+										<Typography gutterBottom variant='h5'>
+											Heading
+										</Typography>
+										<Typography>
+											Lorem ipsum dolor sit amet, consectetur adipisicing elit. A, asperiores, atque aut cumque ea est eveniet impedit incidu.
+										</Typography>
+									</CardContent>
+									<CardActions>
+										<Button size='small' color='primary'>Action1</Button>
+										<Button size='small' color='primary'>Action2</Button>
+									</CardActions>
+								</Card>
+							</Grid>
+						))}
 					</Grid>
 				</Container>
 			</main>
+			<footer className={classes.footer}>
+				<Typography variant='h6' align='center' gutterBottom>
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium autem, dolorum harum in, ipsam magnam molestiae nam natus nesciunt.
+				</Typography>
+				<Typography variant='subtitle1' align='center' color='textSecondary'>
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+				</Typography>
+			</footer>
 		</>
 	);
 };
