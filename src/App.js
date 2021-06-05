@@ -15,6 +15,7 @@ import {
 } from '@material-ui/core';
 import {Business} from '@material-ui/icons';
 import useStyles from './styles';
+import levi from '../src/img/levi.jpg'
 
 const App = () => {
 	const classes = useStyles();
@@ -58,8 +59,22 @@ const App = () => {
 				</div>
 				<Container className={classes.cardGrid} maxWidth='md'>
 					<Grid container spacing={4}>
-						<Grid>
-
+						<Grid item>
+ 							<Card className={classes.card}>
+								<CardMedia className={classes.cardMedia} image={levi} title='image title'/>
+								<CardContent className={classes.cardContent}>
+									<Typography gutterBottom variant='h5'>
+										Heading
+									</Typography>
+									<Typography>
+										Lorem ipsum dolor sit amet, consectetur adipisicing elit. A, asperiores, atque aut cumque ea est eveniet impedit incidu.
+									</Typography>
+								</CardContent>
+								<CardActions>
+									<Button size='small' color='primary'>Action1</Button>
+									<Button size='small' color='primary'>Action2</Button>
+								</CardActions>
+							</Card>
 						</Grid>
 					</Grid>
 				</Container>
